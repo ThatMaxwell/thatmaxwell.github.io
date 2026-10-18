@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Inter:wght@400;500&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 
@@ -23,11 +23,40 @@
 
 <!-- ===== intro scene ===== -->
 <div id="scene" aria-hidden="true">
-  <img class="sc river" src="assets/scene/river.webp" alt="">
+  <!-- river: drawn in code, ripples drift -->
+  <svg class="sc river" viewBox="0 0 1600 300" preserveAspectRatio="none">
+    <path d="M0 120 C 260 70, 520 170, 800 120 S 1340 70, 1600 115 L1600 230 C 1330 270, 1060 190, 800 235 S 270 265, 0 225 Z" fill="#bcdcea"/>
+    <path d="M0 150 C 260 105, 520 195, 800 150 S 1340 105, 1600 145 L1600 200 C 1330 235, 1060 165, 800 205 S 270 230, 0 195 Z" fill="#a6cfe2"/>
+    <g class="ripples" fill="none" stroke="#e9f5fa" stroke-width="5" stroke-linecap="round" stroke-dasharray="60 140">
+      <path d="M40 165 C 300 125, 560 205, 820 165 S 1340 125, 1580 160"/>
+      <path d="M120 195 C 380 160, 640 225, 900 190 S 1400 160, 1560 185"/>
+    </g>
+  </svg>
   <div class="sc paper-name"></div>
-  <img class="sc grass" src="assets/scene/grass.webp" alt="">
+  <!-- ground: soft hills with grass blades -->
+  <svg class="sc grass" viewBox="0 0 1600 260" preserveAspectRatio="none">
+    <path d="M0 90 C 220 40, 420 110, 640 70 S 1100 30, 1320 80 S 1520 60, 1600 70 L1600 260 L0 260 Z" fill="#b9d49a"/>
+    <path d="M0 140 C 260 100, 520 160, 820 120 S 1340 100, 1600 130 L1600 260 L0 260 Z" fill="#9cc47a"/>
+    <g stroke="#7fae5f" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M90 150 l-6 -22 M98 150 l4 -26 M106 152 l10 -18"/><path d="M420 135 l-6 -22 M428 135 l4 -26 M436 137 l10 -18"/>
+      <path d="M760 128 l-6 -22 M768 128 l4 -26 M776 130 l10 -18"/><path d="M1120 120 l-6 -22 M1128 120 l4 -26 M1136 122 l10 -18"/>
+      <path d="M1450 132 l-6 -22 M1458 132 l4 -26 M1466 134 l10 -18"/>
+    </g>
+  </svg>
   <img class="sc tree" src="assets/scene/tree.webp" alt="">
-  <div class="sc bench-wrap"><img class="bench" src="assets/scene/bench.webp" alt=""><img class="picnic" src="assets/scene/picnic.webp" alt=""></div>
+  <div class="sc bench-wrap">
+    <svg class="bench" viewBox="0 0 320 200">
+      <g fill="#6b4a33"><rect x="40" y="104" width="12" height="86" rx="4"/><rect x="268" y="104" width="12" height="86" rx="4"/><rect x="58" y="40" width="10" height="70" rx="4"/><rect x="252" y="40" width="10" height="70" rx="4"/></g>
+      <g fill="#c98d5b" stroke="#a8703f" stroke-width="3"><rect x="24" y="22" width="272" height="20" rx="7"/><rect x="24" y="52" width="272" height="20" rx="7"/><rect x="14" y="98" width="292" height="20" rx="7"/></g>
+    </svg>
+    <svg class="picnic" viewBox="0 0 160 130">
+      <path d="M40 58 C 40 8, 120 8, 120 58" fill="none" stroke="#8a5a32" stroke-width="7" stroke-linecap="round"/>
+      <path d="M18 56 h124 l-12 66 h-100 z" fill="#d9a066" stroke="#a8703f" stroke-width="4" stroke-linejoin="round"/>
+      <g stroke="#b9824d" stroke-width="3"><path d="M30 72 h100 M33 88 h94 M36 104 h88"/><path d="M52 58 l-4 62 M80 58 v62 M108 58 l4 62"/></g>
+      <path d="M10 48 h140 l-6 14 h-128 z" fill="#e8574f"/><g fill="#fff"><rect x="22" y="48" width="12" height="14"/><rect x="50" y="48" width="12" height="14"/><rect x="78" y="48" width="12" height="14"/><rect x="106" y="48" width="12" height="14"/><rect x="132" y="48" width="10" height="14"/></g>
+      <circle cx="58" cy="38" r="12" fill="#f26b5b"/><circle cx="82" cy="34" r="12" fill="#ffc94d"/><path d="M100 46 c4 -18 18 -24 26 -18" stroke="#6ea64a" stroke-width="7" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="petals"></div>
   <button class="skip" type="button">skip</button>
 </div>
@@ -155,9 +184,9 @@
   <img src="assets/logo.png" alt="">
   <p>Thinking is a need.</p>
   <div class="links"><a href="https://github.com/ThatMaxwell">GitHub</a><a href="https://github.com/ThatMaxwell/XKernel">XKernel</a><a href="https://github.com/ThatMaxwell/ChangeOS">ChangeOS</a></div>
-  <p class="credit">Scene photos are public domain (CC0) from rawpixel and StockSnap.</p>
+  <p class="credit">The sakura photo is public domain (CC0). Everything else is drawn in code.</p>
 </footer>
 
-<script src="assets/main.js?v=2"></script>
+<script src="assets/main.js?v=4"></script>
 </body>
 </html>
