@@ -157,3 +157,6 @@ section h2 { font-size: clamp(40px, 7vw, 92px); margin: 0 0 56px; text-align: ce
   .paper-name { bottom: 30vh; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+.hero-logo { width: clamp(72px, 9vw, 110px); height: auto; aspect-ratio: 1; border-radius: 50%; background: #000; margin: 0 auto 22px;
+  box-shadow: 0 10px 26px rgba(43,39,35,.18); animation: float 5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-6px) rotate(-3deg); } }
