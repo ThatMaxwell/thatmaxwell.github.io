@@ -4,190 +4,202 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ThatMaxwell</title>
-<meta name="description" content="Maxwell. Software engineer. Builds operating systems. Thinking is a need.">
+<meta name="description" content="Maxwell. Software engineer. Building Minus, a free, open-source team of AI agents. Thinking is a need.">
 <meta property="og:title" content="ThatMaxwell">
 <meta property="og:description" content="Thinking is a need.">
-<meta name="theme-color" content="#faf6ee">
+<meta property="og:image" content="https://thatmaxwell.github.io/assets/shots/minus-hero.webp">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Inter:wght@400;500&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=9">
 </head>
 <body>
 
-<!-- the "boil": hand-drawn wobble at 3 fps, applied to paper and the sun -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="boil"><feTurbulence id="boil-noise" type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
-</svg>
+<!-- intro: the logo blooms, then lets the page in -->
+<div class="intro" aria-hidden="true"><img src="assets/logo.png" alt=""></div>
 
-<!-- ===== intro scene ===== -->
-<div id="scene" aria-hidden="true">
-  <!-- river: drawn in code, ripples drift -->
-  <svg class="sc river" viewBox="0 0 1600 300" preserveAspectRatio="none">
-    <path d="M0 120 C 260 70, 520 170, 800 120 S 1340 70, 1600 115 L1600 230 C 1330 270, 1060 190, 800 235 S 270 265, 0 225 Z" fill="#bcdcea"/>
-    <path d="M0 150 C 260 105, 520 195, 800 150 S 1340 105, 1600 145 L1600 200 C 1330 235, 1060 165, 800 205 S 270 230, 0 195 Z" fill="#a6cfe2"/>
-    <g class="ripples" fill="none" stroke="#e9f5fa" stroke-width="5" stroke-linecap="round" stroke-dasharray="60 140">
-      <path d="M40 165 C 300 125, 560 205, 820 165 S 1340 125, 1580 160"/>
-      <path d="M120 195 C 380 160, 640 225, 900 190 S 1400 160, 1560 185"/>
-    </g>
-  </svg>
-  <div class="sc paper-name"></div>
-  <!-- ground: soft hills with grass blades -->
-  <svg class="sc grass" viewBox="0 0 1600 260" preserveAspectRatio="none">
-    <path d="M0 90 C 220 40, 420 110, 640 70 S 1100 30, 1320 80 S 1520 60, 1600 70 L1600 260 L0 260 Z" fill="#b9d49a"/>
-    <path d="M0 140 C 260 100, 520 160, 820 120 S 1340 100, 1600 130 L1600 260 L0 260 Z" fill="#9cc47a"/>
-    <g stroke="#7fae5f" stroke-width="4" stroke-linecap="round" fill="none">
-      <path d="M90 150 l-6 -22 M98 150 l4 -26 M106 152 l10 -18"/><path d="M420 135 l-6 -22 M428 135 l4 -26 M436 137 l10 -18"/>
-      <path d="M760 128 l-6 -22 M768 128 l4 -26 M776 130 l10 -18"/><path d="M1120 120 l-6 -22 M1128 120 l4 -26 M1136 122 l10 -18"/>
-      <path d="M1450 132 l-6 -22 M1458 132 l4 -26 M1466 134 l10 -18"/>
-    </g>
-  </svg>
-  <img class="sc tree" src="assets/scene/tree.webp" alt="">
-  <div class="sc bench-wrap">
-    <svg class="bench" viewBox="0 0 320 200">
-      <g fill="#6b4a33"><rect x="40" y="104" width="12" height="86" rx="4"/><rect x="268" y="104" width="12" height="86" rx="4"/><rect x="58" y="40" width="10" height="70" rx="4"/><rect x="252" y="40" width="10" height="70" rx="4"/></g>
-      <g fill="#c98d5b" stroke="#a8703f" stroke-width="3"><rect x="24" y="22" width="272" height="20" rx="7"/><rect x="24" y="52" width="272" height="20" rx="7"/><rect x="14" y="98" width="292" height="20" rx="7"/></g>
-    </svg>
-    <svg class="picnic" viewBox="0 0 160 130">
-      <path d="M40 58 C 40 8, 120 8, 120 58" fill="none" stroke="#8a5a32" stroke-width="7" stroke-linecap="round"/>
-      <path d="M18 56 h124 l-12 66 h-100 z" fill="#d9a066" stroke="#a8703f" stroke-width="4" stroke-linejoin="round"/>
-      <g stroke="#b9824d" stroke-width="3"><path d="M30 72 h100 M33 88 h94 M36 104 h88"/><path d="M52 58 l-4 62 M80 58 v62 M108 58 l4 62"/></g>
-      <path d="M10 48 h140 l-6 14 h-128 z" fill="#e8574f"/><g fill="#fff"><rect x="22" y="48" width="12" height="14"/><rect x="50" y="48" width="12" height="14"/><rect x="78" y="48" width="12" height="14"/><rect x="106" y="48" width="12" height="14"/><rect x="132" y="48" width="10" height="14"/></g>
-      <circle cx="58" cy="38" r="12" fill="#f26b5b"/><circle cx="82" cy="34" r="12" fill="#ffc94d"/><path d="M100 46 c4 -18 18 -24 26 -18" stroke="#6ea64a" stroke-width="7" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="petals"></div>
-  <button class="skip" type="button">skip</button>
+<!-- moving light behind everything -->
+<div class="bg" aria-hidden="true">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="spot"></div>
+  <div class="grain"></div>
 </div>
 
-<div class="sun" aria-hidden="true">
-  <svg viewBox="0 0 200 200">
-    <g class="rays" stroke="#f2a13a" stroke-width="7" stroke-linecap="round">
-      <line x1="100" y1="10" x2="100" y2="34"/><line x1="100" y1="166" x2="100" y2="190"/>
-      <line x1="10" y1="100" x2="34" y2="100"/><line x1="166" y1="100" x2="190" y2="100"/>
-      <line x1="36" y1="36" x2="53" y2="53"/><line x1="147" y1="147" x2="164" y2="164"/>
-      <line x1="36" y1="164" x2="53" y2="147"/><line x1="147" y1="53" x2="164" y2="36"/>
-    </g>
-    <circle cx="100" cy="100" r="52" fill="#ffc94d" stroke="#f2a13a" stroke-width="5"/>
-    <path d="M100 100 m0 0 a6 6 0 0 1 6 6 a12 12 0 0 1 -12 12 a18 18 0 0 1 -18 -18 a24 24 0 0 1 24 -24 a30 30 0 0 1 30 30 a36 36 0 0 1 -36 36" fill="none" stroke="#e8892a" stroke-width="5" stroke-linecap="round"/>
-  </svg>
-</div>
+<div class="progress" aria-hidden="true"></div>
 
-<!-- ===== page ===== -->
-<header class="top">
+<header class="nav">
   <a class="me" href="#top"><img src="assets/logo.png" alt=""><span>ThatMaxwell</span></a>
-  <nav><a href="#work">Work</a><a href="#taste">Taste</a><a href="https://github.com/ThatMaxwell">GitHub</a></nav>
+  <nav>
+    <a href="#minus">Minus</a>
+    <a href="#work">Work</a>
+    <a href="#taste">Taste</a>
+    <a class="pill" href="https://github.com/ThatMaxwell">GitHub</a>
+  </nav>
 </header>
 
 <main id="top">
+
+  <!-- ===== hero ===== -->
   <section class="hero">
-    <img class="hero-logo" src="assets/logo.png" alt="ThatMaxwell logo">
-    <h1 class="paper-word" data-word="ThatMaxwell">ThatMaxwell</h1>
-    <p class="tagline">Thinking is a need.</p>
-    <p class="intro">Hi, I'm Maxwell. I'm a software engineer who loves Linux and AI, and I build operating systems in my free time.</p>
-    <div class="chips">
-      <a href="#xkernel">XKernel</a><a href="#changeos">ChangeOS</a><a href="#terminox">Terminox</a><a href="#slice">Slice</a><a href="#fishi">Fishi</a><a href="#sonot">Sonot</a>
+    <p class="eyebrow r">Software engineer · Linux · AI</p>
+    <h1 class="split" data-split>ThatMaxwell.</h1>
+    <p class="lead r">Hi, I'm Maxwell. I build operating systems in my free time, and right now I'm building <a href="#minus">Minus</a>.</p>
+    <div class="cta r">
+      <a class="btn light" href="#minus">Meet Minus</a>
+      <a class="btn ghost" href="#work">See my work</a>
     </div>
-    <div class="down">scroll ↓</div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
   </section>
 
+  <!-- ===== Minus, the main project ===== -->
+  <section class="minus" id="minus">
+    <div class="minus-head">
+      <p class="eyebrow r"><i class="dot"></i>Main project · now in beta</p>
+      <h2 class="big r">Meet <img class="mascot" src="assets/minus-mascot.svg" alt="the Minus mascot"> Minus.</h2>
+      <p class="sub r">A free, open-source team of AI agents that work on real computers. In the cloud or on your own machine, with the AI you already pay for.</p>
+      <div class="cta r">
+        <a class="btn light" href="https://getminus.vercel.app">Visit Minus</a>
+        <a class="btn ghost" href="https://github.com/ThatMaxwell/Minus">View the code</a>
+      </div>
+    </div>
+
+    <div class="stage" data-stage>
+      <div class="frame">
+        <img src="assets/shots/minus-hero.webp" alt="The Minus website with a live preview of the app: agents Scout, Inbox, Ledger and Patch at work" loading="lazy">
+      </div>
+    </div>
+
+    <div class="features">
+      <article class="feat r" data-glow><h3>A team, not a chatbot.</h3><p>Create agents, give each one a job, and let them hand work to each other.</p></article>
+      <article class="feat r" data-glow><h3>Real computers.</h3><p>Every agent gets its own computer, or uses yours. It clicks, types and switches windows the way you do, and every action is logged.</p></article>
+      <article class="feat r" data-glow><h3>Your AI, your keys.</h3><p>Claude, ChatGPT, Gemini, Grok, Ollama, OpenRouter or any OpenAI-compatible API. Minus never charges for AI.</p></article>
+      <article class="feat r" data-glow><h3>You stay in charge.</h3><p>Agents ask before anything they can't undo, like sending email or spending money.</p></article>
+    </div>
+
+    <div class="faces">
+      <div class="faces-txt">
+        <h3 class="mid r">Every agent<br>has a face.</h3>
+        <p class="r">Each agent is a small cloud-shaped character with its own color, expression and accessories. A real 3D model drawn flat, so it turns, blinks and reacts like an illustration.</p>
+        <a class="link r" href="https://getminus.vercel.app/lab.html">Try the mascot lab →</a>
+      </div>
+      <div class="faces-shot r" data-tilt><img src="assets/shots/minus-agents.webp" alt="Minus agents, each with its own color, expression and accessory" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- ===== scroll-lit line ===== -->
+  <section class="statement">
+    <p class="lit" data-lit>I like quiet software. Nothing you didn't ask for, silent boots, and windows that arrange themselves. Thinking is a need.</p>
+  </section>
+
+  <!-- ===== other work ===== -->
   <section class="work" id="work">
-    <h2 class="paper-word" data-word="Work">Work</h2>
+    <p class="eyebrow r">More work</p>
+    <h2 class="big r">Everything else.</h2>
 
-    <article class="proj" id="xkernel">
-      <div class="txt">
-        <p class="kind">operating system · planning</p>
-        <h3>XKernel</h3>
-        <p class="one">Your whole machine, as a multi-VM.</p>
-        <p>Every operating system you use runs side by side as a tile over your wallpaper, on real hardware through Linux's KVM. No bar, no dock, no assistant. Your machines save themselves and resume where you left them. The browser showcase already boots real OSes in tiles.</p>
-        <div class="links"><a href="https://thatmaxwell.github.io/XKernel/">Website</a><a href="https://thatmaxwell.github.io/XKernel/demo/">Showcase</a><a href="https://github.com/ThatMaxwell/XKernel">Code</a></div>
-      </div>
-      <div class="shots one-wide"><img src="assets/shots/xkernel-1.webp" alt="XKernel showcase with Linux, KolibriOS and FreeDOS tiled" loading="lazy"></div>
-    </article>
+    <div class="marquee" aria-hidden="true"><div class="track">
+      <span>XKernel</span><span>ChangeOS</span><span>Terminox</span><span>Slice</span><span>Fishi</span><span>Sonot</span>
+      <span>XKernel</span><span>ChangeOS</span><span>Terminox</span><span>Slice</span><span>Fishi</span><span>Sonot</span>
+    </div></div>
 
-    <article class="proj" id="changeos">
-      <div class="txt">
-        <p class="kind">android os · 1.5 pumpkin caramel</p>
-        <h3>ChangeOS</h3>
-        <p class="one">The Linux of Android.</p>
-        <p>Android 17 with nothing you didn't ask for. Two apps preinstalled, Aurora Store and Firefox, plus Termux as the terminal. Google Play is banned. A custom launcher, an accent that the whole system follows, and a status ring that folds battery, signal and Wi-Fi into one shape. Versions are desserts until 7.0, which is just X.</p>
-        <div class="links"><a href="https://thatmaxwell.github.io/ChangeOS/">Website</a><a href="https://github.com/ThatMaxwell/ChangeOS/releases">Releases</a><a href="https://github.com/ThatMaxwell/ChangeOS">Code</a></div>
-      </div>
-      <div class="shots"><img src="assets/shots/changeos-1.webp" alt="ChangeOS Sweet Vanilla home screen" loading="lazy"><img src="assets/shots/changeos-2.webp" alt="ChangeOS Pumpkin Caramel home screen" loading="lazy"></div>
-    </article>
+    <div class="grid">
+      <article class="card wide r" id="xkernel" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">Operating system · planning</p>
+          <h3>XKernel</h3>
+          <p class="one">Your whole machine, as a multi-VM.</p>
+          <p>Every OS you use runs side by side as a tile over your wallpaper, on real hardware through KVM. No bar, no dock. Machines save themselves and resume where you left them.</p>
+          <div class="links"><a href="https://thatmaxwell.github.io/XKernel/">Website</a><a href="https://thatmaxwell.github.io/XKernel/demo/">Showcase</a><a href="https://github.com/ThatMaxwell/XKernel">Code</a></div>
+        </div>
+        <div class="card-img"><img src="assets/shots/xkernel-1.webp" alt="XKernel showcase with Linux, KolibriOS and FreeDOS tiled" loading="lazy"></div>
+      </article>
 
-    <article class="proj" id="terminox">
-      <div class="txt">
-        <p class="kind">android app · my first project</p>
-        <h3>Terminox</h3>
-        <p class="one">A Hyprland-style tiling terminal for Android.</p>
-        <p>Real Debian, no root. Glass terminal windows that tile themselves (dwindle, master, grid, Niri-style columns), seven themes, live synced lyrics behind your windows, and an AI blob that types commands for you.</p>
-        <div class="links"><a href="https://github.com/ThatMaxwell/Terminox">Code</a></div>
-      </div>
-      <div class="shots"><img src="assets/shots/terminox-1.webp" alt="Terminox tiled terminals" loading="lazy"><img src="assets/shots/terminox-2.webp" alt="Terminox matrix theme" loading="lazy"><img src="assets/shots/terminox-3.webp" alt="Terminox neofetch" loading="lazy"></div>
-    </article>
+      <article class="card r" id="changeos" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">Android OS · 1.5 Pumpkin Caramel</p>
+          <h3>ChangeOS</h3>
+          <p class="one">The Linux of Android.</p>
+          <p>Android 17 with nothing you didn't ask for. Aurora Store, Firefox and Termux. Google Play is banned.</p>
+          <div class="links"><a href="https://thatmaxwell.github.io/ChangeOS/">Website</a><a href="https://github.com/ThatMaxwell/ChangeOS/releases">Releases</a><a href="https://github.com/ThatMaxwell/ChangeOS">Code</a></div>
+        </div>
+        <div class="card-img phones"><img src="assets/shots/changeos-1.webp" alt="ChangeOS Sweet Vanilla home screen" loading="lazy"><img src="assets/shots/changeos-2.webp" alt="ChangeOS Pumpkin Caramel home screen" loading="lazy"></div>
+      </article>
 
-    <article class="proj" id="slice">
-      <div class="txt">
-        <p class="kind">browser · windows</p>
-        <h3>Slice</h3>
-        <p class="one">Say it. Slice does it.</p>
-        <p>An AI-native browser built on Blink with uBlock Origin built in. The new tab is an AI bar: type "yo" and YouTube opens, ask a question and it reads the web and answers with sources, or tell it to make the browser lemon colored.</p>
-        <div class="links"><a href="https://github.com/ThatMaxwell/Slice">Code</a></div>
-      </div>
-      <div class="shots wide"><img src="assets/shots/slice-1.webp" alt="Slice new tab AI bar" loading="lazy"><img src="assets/shots/slice-2.webp" alt="Slice settings" loading="lazy"></div>
-    </article>
+      <article class="card r" id="terminox" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">Android app · my first project</p>
+          <h3>Terminox</h3>
+          <p class="one">A tiling terminal for Android.</p>
+          <p>Real Debian, no root. Glass windows that tile themselves, seven themes, synced lyrics and an AI blob that types commands for you.</p>
+          <div class="links"><a href="https://github.com/ThatMaxwell/Terminox">Code</a></div>
+        </div>
+        <div class="card-img phones"><img src="assets/shots/terminox-1.webp" alt="Terminox tiled terminals" loading="lazy"><img src="assets/shots/terminox-3.webp" alt="Terminox neofetch" loading="lazy"></div>
+      </article>
 
-    <article class="proj" id="fishi">
-      <div class="txt">
-        <p class="kind">messenger · android</p>
-        <h3>Fishi</h3>
-        <p class="one">A calm, black and white messenger.</p>
-        <p>Chats, groups, voice notes, calls and reactions, with custom chat bubbles everyone can see, 186 chibi emoji drawn in code, and Finn, a built-in AI friend. Built with Flutter and Supabase.</p>
-        <div class="links"><a href="https://github.com/ThatMaxwell/Fishi">Code</a></div>
-      </div>
-      <div class="shots"><img src="assets/shots/fishi-1.webp" alt="Fishi chat list" loading="lazy"><img src="assets/shots/fishi-2.webp" alt="Fishi chat, dark" loading="lazy"><img src="assets/shots/fishi-3.webp" alt="Fishi group chat" loading="lazy"></div>
-    </article>
+      <article class="card wide r" id="slice" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">Browser · Windows</p>
+          <h3>Slice</h3>
+          <p class="one">Say it. Slice does it.</p>
+          <p>An AI-native browser on Blink with uBlock Origin built in. Type "yo" and YouTube opens, ask a question and it answers with sources, or tell it to turn lemon colored.</p>
+          <div class="links"><a href="https://github.com/ThatMaxwell/Slice">Code</a></div>
+        </div>
+        <div class="card-img"><img src="assets/shots/slice-1.webp" alt="Slice new tab AI bar" loading="lazy"></div>
+      </article>
 
-    <article class="proj" id="sonot">
-      <div class="txt">
-        <p class="kind">ai · coming soon</p>
-        <h3>Sonot</h3>
-        <p class="one">Think in light.</p>
-        <p>One AI family that reads, reasons, writes, codes, sees and speaks, built for Windows, Android and Linux. Three apps, one mind.</p>
-        <div class="links"><a href="https://thatmaxwell.github.io/Sonot/">Website</a><a href="https://github.com/ThatMaxwell/Sonot">Code</a></div>
-      </div>
-      <div class="shots mark"><img src="assets/shots/sonot.svg" alt="Sonot mark" loading="lazy"></div>
-    </article>
+      <article class="card r" id="fishi" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">Messenger · Android</p>
+          <h3>Fishi</h3>
+          <p class="one">A calm, black and white messenger.</p>
+          <p>Chats, groups, voice notes and calls, 186 chibi emoji drawn in code, and Finn, a built-in AI friend.</p>
+          <div class="links"><a href="https://github.com/ThatMaxwell/Fishi">Code</a></div>
+        </div>
+        <div class="card-img phones"><img src="assets/shots/fishi-1.webp" alt="Fishi chat list" loading="lazy"><img src="assets/shots/fishi-2.webp" alt="Fishi chat, dark" loading="lazy"></div>
+      </article>
+
+      <article class="card r" id="sonot" data-glow data-tilt>
+        <div class="card-txt">
+          <p class="kind">AI · coming soon</p>
+          <h3>Sonot</h3>
+          <p class="one">Think in light.</p>
+          <p>One AI family that reads, reasons, writes, codes, sees and speaks. Windows, Android and Linux. Three apps, one mind.</p>
+          <div class="links"><a href="https://thatmaxwell.github.io/Sonot/">Website</a><a href="https://github.com/ThatMaxwell/Sonot">Code</a></div>
+        </div>
+        <div class="card-img mark"><img src="assets/shots/sonot.svg" alt="Sonot mark" loading="lazy"></div>
+      </article>
+    </div>
   </section>
 
+  <!-- ===== taste ===== -->
   <section class="taste" id="taste">
-    <h2 class="paper-word" data-word="Taste">Taste</h2>
-    <div class="board">
-      <div class="note n1"><b>Linux</b><span>A lazy Gentoo user who misses NixOS. One config file should describe a whole machine.</span></div>
-      <div class="note n2"><b>Tiling</b><span>Hyprland and niri. Windows should arrange themselves.</span></div>
-      <div class="note n3 song">
-        <b>On repeat</b>
-        <span>Alex G, "Harvey"</span>
-        <iframe title="Harvey by Alex G on Apple Music" allow="autoplay *; encrypted-media *;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/dsu/1737020905?i=1737020910" loading="lazy"></iframe>
-      </div>
-      <div class="note n4"><b>Weezer</b><span><i>Pinkerton</i>. Great sound. The lyrics are Weezer's fault.</span></div>
-      <div class="note n5"><b>Quiet software</b><span>Silent boots, no click sounds, nothing you didn't ask for.</span></div>
-      <div class="note n6"><b>Open source</b><span>Fork it, fix it, give it back. Never hard-fork.</span></div>
-      <div class="note n7"><b>The cat</b><span>Small, round, black. Melts into blankets during head pats.</span></div>
-      <div class="note n8"><b>Paper</b><span>I print my own plans. It makes them real.</span></div>
+    <p class="eyebrow r">Taste</p>
+    <h2 class="big r">Things I like.</h2>
+    <ul class="list">
+      <li class="r"><b>Linux</b><span>A lazy Gentoo user who misses NixOS. One config file should describe a whole machine.</span></li>
+      <li class="r"><b>Tiling</b><span>Hyprland and niri. Windows should arrange themselves.</span></li>
+      <li class="r"><b>Weezer</b><span><i>Pinkerton</i>. Great sound. The lyrics are Weezer's fault.</span></li>
+      <li class="r"><b>Open source</b><span>Fork it, fix it, give it back. Never hard-fork.</span></li>
+      <li class="r"><b>The cat</b><span>Small, round, black. Melts into blankets during head pats.</span></li>
+      <li class="r"><b>Paper</b><span>I print my own plans. It makes them real.</span></li>
+    </ul>
+    <div class="song r" data-glow>
+      <div><p class="kind">On repeat</p><p class="one">Alex G, "Harvey"</p></div>
+      <iframe title="Harvey by Alex G on Apple Music" allow="autoplay *; encrypted-media *;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/dsu/1737020905?i=1737020910" loading="lazy"></iframe>
     </div>
   </section>
 </main>
 
 <footer class="foot">
-  <img src="assets/logo.png" alt="">
-  <p>Thinking is a need.</p>
-  <div class="links"><a href="https://github.com/ThatMaxwell">GitHub</a><a href="https://github.com/ThatMaxwell/XKernel">XKernel</a><a href="https://github.com/ThatMaxwell/ChangeOS">ChangeOS</a></div>
-  <p class="credit">The sakura photo is public domain (CC0). Everything else is drawn in code.</p>
+  <h2 class="huge r">Thinking is a need.</h2>
+  <div class="foot-row">
+    <a class="me" href="#top"><img src="assets/logo.png" alt=""><span>ThatMaxwell</span></a>
+    <div class="links"><a href="https://github.com/ThatMaxwell">GitHub</a><a href="https://getminus.vercel.app">Minus</a><a href="https://github.com/ThatMaxwell/XKernel">XKernel</a><a href="https://github.com/ThatMaxwell/ChangeOS">ChangeOS</a></div>
+  </div>
 </footer>
 
-<script src="assets/main.js?v=8"></script>
+<script src="assets/main.js?v=9"></script>
 </body>
 </html>
